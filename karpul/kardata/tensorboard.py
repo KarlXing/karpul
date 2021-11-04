@@ -71,7 +71,7 @@ def read_tag_events(scalar_tag, event_files, verbal=True, smooth_weight=0, inter
     # 2. read tag
     res = {}
     for i, event in enumerate(events):
-        res[i] = read_scalar_tag(event, tag, smooth_weight=smooth_weight, interp=interp, interp_x=interp_x)
+        res[i] = read_scalar_tag(event, scalar_tag, smooth_weight=smooth_weight, interp=interp, interp_x=interp_x)
     
     # 3. calculate mean and std if needed
     if meanstd:
