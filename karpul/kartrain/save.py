@@ -10,8 +10,10 @@ def save_dicts(path, dicts, indent=4):
     configs: a list of dicts to save
     '''
     with open(path, 'w') as f:
-        for dict in dicts:
-            json.dump(dict, f, indent=indent)
-            f.write('\n')
-
+        if isinstance(dicts, list):
+            for dict in dicts:
+                json.dump(dict, f, indent=indent)
+                f.write('\n')
+        else:
+            json.dump(dicts, f, indent=indent)
 
