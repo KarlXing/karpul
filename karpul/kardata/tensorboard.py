@@ -85,6 +85,6 @@ def read_tag_events(scalar_tag, event_files, verbal=True, smooth_weight=0, inter
 def get_event_files(path, keywords=[], filterwords=[], recursive=False):
     '''extract event files under a path, selected by keywords and filtered by filterwords'''
 
-    event_files = glob.glob('%s/*/events.out.tfevents*' % path, recursive=recursive)
+    event_files = glob.glob('%s/**/events.out.tfevents*' % path, recursive=recursive)
     selected_files = [f for f in event_files if all([k in f for k in keywords]) and not any([k in f for k in filterwords])]
     return selected_files
